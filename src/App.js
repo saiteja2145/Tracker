@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
 
-function App() {
+import "./App.css";
+import Icon from "./components/Icon/Icon";
+import Cards from "./components/Cards/Cards";
+import Countries from "./components/Countries/Countries";
+import Charts from "./components/Charts/Charts.jsx";
+import { fetchData } from "./components/api/api";
+
+const App = () => {
+  const [country, setCountry] = useState("");
+
+  const [currentTrends, setCurrentTrends] = useState(null);
+
+  useEffect(() => {
+    if (country) {
+      const fetchDataAxios = async () => {
+        const data = await fetchData(country);
+        setCurrentTrends(data);
+      };
+      fetchDataAxios();
+    }
+  }, [country]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Icon />
+      <Cards country={country} currentTrendsCards={currentTrends} />
+      <Countries country={country} setCountry={setCountry} />
+      <Charts country={country} currentTrends={currentTrends} />
     </div>
   );
-}
+};
 
 export default App;
