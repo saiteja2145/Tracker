@@ -1,34 +1,28 @@
-import React, { useState, useEffect } from "react";
-
-import "./App.css";
-import Icon from "./components/Icon/Icon";
-import Cards from "./components/Cards/Cards";
-import Countries from "./components/Countries/Countries";
-import Charts from "./components/Charts/Charts.jsx";
-import { fetchData } from "./components/api/api";
+import React from "react";
+import Global from "./Global";
+import Headers from "./components/Header/Headers.js";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import India from "./components/India/India";
 
 const App = () => {
-  const [country, setCountry] = useState("");
-
-  const [currentTrends, setCurrentTrends] = useState(null);
-
-  useEffect(() => {
-    if (country) {
-      const fetchDataAxios = async () => {
-        const data = await fetchData(country);
-        setCurrentTrends(data);
-      };
-      fetchDataAxios();
-    }
-  }, [country]);
-
   return (
-    <div className="container">
-      <Icon />
-      <Cards country={country} currentTrendsCards={currentTrends} />
-      <Countries country={country} setCountry={setCountry} />
-      <Charts country={country} currentTrends={currentTrends} />
-    </div>
+    <Router>
+      <Headers />
+      <Switch>
+        <Route path="/" exact>
+          <Global />
+        </Route>
+        <Route path="/india">
+          <India />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
+    </Router>
   );
 };
 
