@@ -1,0 +1,28 @@
+.notificationContainer {
+  flex: 25%;
+}
+
+.notificationCard {
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
+  padding: 0.3rem 2rem;
+  margin: 0.8rem 0;
+}
+
+.color-gray {
+  color: rgb(121, 121, 121);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.color-black {
+  color: rgb(121, 121, 121);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.alignNotification {
+  text-align: center;
+  color: #33b5e5;
+  font-size: 2.2rem;
+  font-weight: 600;
+}

@@ -1,0 +1,7 @@
+.dailyCardsContainer {
+  display: flex;
+}
+
+.dailyCards {
+  flex: 1;
+}
