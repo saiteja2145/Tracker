@@ -56,7 +56,7 @@ const DailyCards = ({ cardData }) => {
   );
   return (
     <div>
-      <h2 className="heading--secondary">{`Total Active : ${cardData.active}`}</h2>
+      <h2 className="heading--secondary textCenter">{`Total Active : ${cardData.active}`}</h2>
 
       {DailyCardData}
     </div>

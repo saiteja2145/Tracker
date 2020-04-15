@@ -15,7 +15,7 @@ const India = () => {
             axios.get("https://api.covid19india.org/updatelog/log.json"),
             axios.get("https://api.covid19india.org/data.json"),
           ]);
-          setLogData(logsData.data.reverse().slice(0, 5));
+          setLogData(logsData.data.reverse().slice(0, 8));
           setDailyData(getDailyData.data);
         } catch (error) {
           console.log(error);

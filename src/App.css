@@ -21,3 +21,7 @@
 .indiaflexContainer {
   display: flex;
 }
+
+.textCenter {
+  text-align: center;
+}

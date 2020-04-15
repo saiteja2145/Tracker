@@ -1,6 +1,7 @@
 import React from "react";
 import "./DailyData.css";
 import DailyCards from "./Daily/DailyCards";
+import DailyChart from "./Daily/DailyChart";
 
 const DailyData = ({ dailyData }) => {
   return (
@@ -13,6 +14,7 @@ const DailyData = ({ dailyData }) => {
           ],
         }}
       />
+      <DailyChart dailyData={dailyData.cases_time_series} />
     </div>
   );
 };
