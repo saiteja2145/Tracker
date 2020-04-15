@@ -31,7 +31,7 @@ const Logs = ({ logData }) => {
         : null}
     </div>
   );
-  return <div>{logDatas}</div>;
+  return <>{logDatas}</>;
 };
 
 export default Logs;

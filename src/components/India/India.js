@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Logs from "./Logs";
 import DailyData from "./DailyData";
+import DailyChart from "./Daily/DailyChart";
 import Spinner from "../Global/Spinner/Spinner";
 
 const India = () => {
@@ -15,7 +16,7 @@ const India = () => {
             axios.get("https://api.covid19india.org/updatelog/log.json"),
             axios.get("https://api.covid19india.org/data.json"),
           ]);
-          setLogData(logsData.data.reverse().slice(0, 8));
+          setLogData(logsData.data.reverse().slice(0, 6));
           setDailyData(getDailyData.data);
         } catch (error) {
           console.log(error);
@@ -33,6 +34,7 @@ const India = () => {
         <Logs logData={logData} />
         <DailyData dailyData={dailyData} />
       </div>
+      <DailyChart dailyData={dailyData.cases_time_series} />
     </div>
   );
 };
