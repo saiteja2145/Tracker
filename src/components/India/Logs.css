@@ -2,6 +2,12 @@
   width: 26%;
 }
 
+@media (max-width: 800px) {
+  .notificationContainer {
+    width: 100%;
+  }
+}
+
 .notificationCard {
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
   padding: 0.3rem 2rem;

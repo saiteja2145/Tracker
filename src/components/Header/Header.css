@@ -9,6 +9,16 @@
   list-style: none;
 }
 
+@media (max-width: 800px) {
+  .list {
+    flex-direction: column;
+    height: 20rem;
+    justify-content: space-evenly;
+  }
+  .navLinks {
+    margin: 3rem;
+  }
+}
 .navLinks {
   margin: 0 3rem;
 }

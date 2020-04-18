@@ -8,6 +8,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import India from "./components/India/India";
+import IndiaStateWise from "./components/IndianStatesWise/IndianStateWise";
 
 const App = () => {
   return (
@@ -19,6 +20,9 @@ const App = () => {
         </Route>
         <Route path="/india">
           <India />
+        </Route>
+        <Route path="/indiaStateWise">
+          <IndiaStateWise />
         </Route>
         <Redirect to="/" />
       </Switch>

@@ -22,6 +22,11 @@
   display: flex;
 }
 
+@media (max-width: 800px) {
+  .indiaflexContainer {
+    flex-direction: column;
+  }
+}
 .textCenter {
   text-align: center;
 }

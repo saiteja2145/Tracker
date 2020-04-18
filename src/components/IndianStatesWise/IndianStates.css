@@ -1,0 +1,93 @@
+.stateContainer {
+  margin: 2rem;
+  padding: 1rem;
+  display: flex;
+}
+
+.stateTable {
+  box-shadow: 0 0.5rem 1rem 0.2rem rgba(0, 0, 0, 0.2);
+  border-collapse: collapse;
+}
+.stateTableHeadings {
+  padding: 0;
+  background-color: #6c7ae0;
+}
+
+.tableBody:nth-child(n),
+.tableBodyDist:nth-child(n) {
+  border-bottom: 1px solid #ccc;
+}
+
+.tableStateHeading {
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: start;
+  padding: 1rem 0.6rem;
+  color: #fff;
+}
+
+.tbodyContainer {
+  background-color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.tbodyContainer:nth-child(n):hover {
+  background-color: #ccaaff;
+  cursor: pointer;
+}
+
+.tbodyContainer:first-child:hover {
+  background-color: #fff;
+  cursor: default;
+}
+
+.tableBody {
+  font-size: 1.6rem;
+  padding: 0.8rem;
+}
+
+.districtCont,
+.stateCont {
+  margin: 0 2rem;
+}
+.districtCont {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stateCont {
+  width: 60%;
+}
+.tableBodyDist {
+  font-size: 1.6rem;
+  padding: 0.8rem;
+}
+
+.pad {
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+}
+
+.marTopBot {
+  margin: 2rem 0;
+}
+
+@media (max-width: 1000px) {
+  .stateContainer {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+  .stateCont {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  .districtCont {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}

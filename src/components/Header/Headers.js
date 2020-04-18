@@ -19,6 +19,15 @@ const Headers = () => {
             India
           </NavLink>
         </li>
+        <li className="navLinks">
+          <NavLink
+            to="/indiaStateWise"
+            className="link"
+            activeClassName="activeClass"
+          >
+            Indian States
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
