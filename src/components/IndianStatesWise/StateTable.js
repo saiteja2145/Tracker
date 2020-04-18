@@ -21,7 +21,12 @@ const StateTable = ({ stateWiseData, setselectState }) => {
               key={stateD.state}
               className="tbodyContainer"
               onClick={() =>
-                stateD.state === "Total" ? null : setselectState(stateD.state)
+                stateD.state === "Total"
+                  ? null
+                  : setselectState([
+                      stateD.state,
+                      stateD.statecode.toLowerCase(),
+                    ])
               }
             >
               <td className="tableBody">{i}</td>
