@@ -91,3 +91,29 @@
     justify-content: center;
   }
 }
+
+.testedContainer {
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  justify-content: space-evenly;
+  margin: 2rem 1rem;
+  color: #fff;
+  border-radius: 1rem;
+}
+
+.lineContainer {
+  display: flex;
+}
+
+.pad-l-1 {
+  padding-left: 1rem;
+}
+
+.pad-r-1 {
+  padding-right: 1rem;
+}
+
+.mar-tb-5 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}

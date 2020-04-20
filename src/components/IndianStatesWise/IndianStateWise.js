@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import "./IndianStates.css";
 import StateTable from "./StateTable";
-import { fetchData } from "../Global/api/api";
 import Spinner from "../Global/Spinner/Spinner";
 import DistrictWise from "./DistrictWise";
 
@@ -11,13 +10,22 @@ const IndianStateWise = () => {
   const [districtWiseData, setdistrictWiseData] = useState([]);
   const [selectState, setselectState] = useState(["Andhra Pradesh", "ap"]);
   const [stateDailyData, setstateDailyData] = useState([]);
+  const [testedData, settestedData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [stateD, districtD, stateDailyD] = await Promise.all([
+        const [
+          stateD,
+          districtD,
+          stateDailyD,
+          {
+            data: { states_tested_data },
+          },
+        ] = await Promise.all([
           Axios.get("https://api.covid19india.org/data.json"),
           Axios.get("https://api.covid19india.org/v2/state_district_wise.json"),
           Axios.get("https://api.covid19india.org/states_daily.json"),
+          Axios.get("https://api.covid19india.org/state_test_data.json"),
         ]);
         const dailyStateConfirmedData = stateDailyD.data.states_daily.filter(
           (val) => val.status === "Confirmed"
@@ -28,6 +36,7 @@ const IndianStateWise = () => {
         const dailyStateDeceasedData = stateDailyD.data.states_daily.filter(
           (val) => val.status === "Deceased"
         );
+        settestedData(states_tested_data.reverse());
         setstateWiseData(stateD.data.statewise);
         setstateDailyData([
           dailyStateConfirmedData,
@@ -50,6 +59,7 @@ const IndianStateWise = () => {
         setselectState={setselectState}
       />
       <DistrictWise
+        testedData={testedData}
         selectState={selectState}
         districtWiseData={districtWiseData}
         stateWiseData={stateWiseData.filter((data) => data.state !== "Total")}

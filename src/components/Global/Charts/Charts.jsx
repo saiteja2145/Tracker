@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Line, Bar } from "react-chartjs-2";
-import { fetchDailyData, fetchData } from "../api/api";
+import { fetchDailyData } from "../api/api";
 import { useState } from "react";
 import "./Chart.css";
 
@@ -57,7 +57,7 @@ const Charts = ({ country, currentTrends }) => {
     ) : null;
 
   const { confirmed, recovered, deaths } = barChartData;
-  console.log(confirmed);
+
   const BarChart = confirmed ? (
     <Bar
       data={{
