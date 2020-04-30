@@ -10,18 +10,19 @@ const Headers = () => {
           <img src={image} alt="Icon" className="iconNew link" />
         </li>
         <li className="navLinks">
-          <NavLink to="/" className="link" exact activeClassName="activeClass">
+          <NavLink to="/global" className="link" activeClassName="activeClass">
             Global
           </NavLink>
         </li>
         <li className="navLinks">
-          <NavLink to="/india" className="link" activeClassName="activeClass">
+          <NavLink to="/" className="link" exact activeClassName="activeClass">
             India
           </NavLink>
         </li>
         <li className="navLinks">
           <NavLink
             to="/indiaStateWise"
+            exact
             className="link"
             activeClassName="activeClass"
           >

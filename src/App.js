@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import Global from "./Global";
 import Headers from "./components/Header/Headers.js";
 import {
@@ -8,7 +8,12 @@ import {
   Redirect,
 } from "react-router-dom";
 import India from "./components/India/India";
-import IndiaStateWise from "./components/IndianStatesWise/IndianStateWise";
+
+import Spinner from "./components/Global/Spinner/Spinner";
+
+const IndiaStateWiseLazy = lazy(() =>
+  import("./components/IndianStatesWise/IndianStateWise")
+);
 
 const App = () => {
   return (
@@ -16,13 +21,15 @@ const App = () => {
       <Headers />
       <Switch>
         <Route path="/" exact>
-          <Global />
-        </Route>
-        <Route path="/india">
           <India />
         </Route>
+        <Route path="/global">
+          <Global />
+        </Route>
         <Route path="/indiaStateWise">
-          <IndiaStateWise />
+          <Suspense fallback={<Spinner />}>
+            <IndiaStateWiseLazy />
+          </Suspense>
         </Route>
         <Redirect to="/" />
       </Switch>
